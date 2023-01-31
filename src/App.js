@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Tabs } from 'antd';
+import Daikuan from './daikuan';
+import Cunkuan from './cunkuan';
+import Lixizhuanhuan from './lixizhuanhuan';
+import Title from './title';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Tabs className='App-header'  defaultActiveKey="1" >
+        <items tab='贷款利息' key='1'>
+          <Title/>
+          <Daikuan/>
+        </items>
+        <items tab='存款利息' key='2'>
+          <Title/>
+          <Cunkuan/>
+        </items>
+        {/* <items tab='利息转换' key='3'>
+          <Lixizhuanhuan/>
+        </items> */}
+      </Tabs>
     </div>
   );
 }
 
 export default App;
+
+
+
+
