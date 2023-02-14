@@ -14,7 +14,7 @@ class App extends React.Component {
       hankuaijine:0,
       yuexi:0,
       cishu:1,
-      qixian:2,
+      qixian:0,
       pa:1,
     };
      // 为了在回调中使用 `this`，这个绑定是必不可少的

@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Input,Button,Select, Table, Row, Col } from 'antd';
-import Image from 'rc-image';
+import { Input,Button,Select,  Row, Col } from 'antd';
 
 class App extends React.Component {
   constructor(props) {
@@ -47,7 +46,7 @@ class App extends React.Component {
     return (
       <div>
         <Row >
-          <Col  span={12} className='App-right'>
+          <Col  span={24} className='App-right'>
             存款种类：<Select className='App-input' onChange={(e) =>{this.handleSelectChange(e)}} style={{ width: 200 }}  defaultValue="1"
                       options={[
                         { value: '1', label: '活期' },
@@ -75,9 +74,6 @@ class App extends React.Component {
             {/* 存期：<Input placeholder="存期" className='App-input' name='qixian' value={this.state.qixian} onChange={(e) =>{this.handleChange(e)}}/><br/> */}
             <Button type="primary" onClick={this.multiply}>计算</Button><br/>
             本息：<Input placeholder="利息" className='App-input' suffix="元" value={this.state.lixi.toFixed(2)}/>        
-          </Col>
-          <Col span={12}>
-            <Image className='App-right' src='../lilv.png'></Image>
           </Col>
         </Row>
 
