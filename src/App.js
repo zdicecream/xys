@@ -13,12 +13,12 @@ function App() {
       <Title/>
       <Tabs className='App-header' defaultActiveKey="1" items={[
         {
-          label: '贷款利息',
+          label: '贷款计算',
           key: '1',
           children: <Daikuan/>,
         },
         {
-          label: '存款利息',
+          label: '存款计算',
           key: '2',
           children: <Cunkuan/>,
         },

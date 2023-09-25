@@ -7,10 +7,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       benjin:0,
-      lilv:0,
+      lilv:0.35,
       lixi:0,
       cishu:1,
-      qixian:1
+      qixian:'一年'
     };
      // 为了在回调中使用 `this`，这个绑定是必不可少的
      this.multiply = this.multiply.bind(this);
@@ -31,14 +31,35 @@ class App extends React.Component {
 
   handleSelectChange(e){
     let c = 0
+    let l = 0
+    let q = 0
     switch(e){
-      case '1': c='1';break;
-      case '2': c='4';break;
-      case '3': c='2';break;
-      default: c='1'; 
+      case '1': c='1';l='0.35';q='为什么不行';break;
+      case '2': c='4';l='1.8';break;
+      case '3': c='2';l='2.0';break;
+      case '4': c='1';l='2.25';break;
+      case '5': c='1';l='2.85';break;
+      case '6': c='1';l='3.35';break;
+      case '7': c='1';l='3.55';break;
+      case '8': c='1';l='1.8';break;
+      case '9': c='1';l='2.0';break;
+      case '10': c='1';l='2.2';break;
+      case '11': c='1';l='1.8';break;
+      case '12': c='1';l='2.0';break;
+      case '13': c='1';l='2.2';break;
+      case '14': c='1';l='1.8';break;
+      case '15': c='1';l='2.0';break;
+      case '16': c='1';l='2.2';break;
+      case '17': c='1';l='1.5';break;
+      case '18': c='1';l='2.05';break;
+      default: c='1';l='0';
     }
     this.setState({
-        cishu: c
+        cishu: c,
+        benjin:0,
+        lilv:l,
+        lixi:0,
+        qixian:q
     })
   };
 
@@ -71,8 +92,8 @@ class App extends React.Component {
             
             本金：<Input placeholder="本金" className='App-input' name='benjin' value={this.state.benjin} suffix="元" onChange={(e) =>{this.handleChange(e)}}/><br/>
             年利率：<Input placeholder="利率" className='App-input' name='lilv' value={this.state.lilv} suffix="%" onChange={(e) =>{this.handleChange(e)}}/><br/>
-            {/* 存期：<Input placeholder="存期" className='App-input' name='qixian' value={this.state.qixian} onChange={(e) =>{this.handleChange(e)}}/><br/> */}
-            <Button type="primary" onClick={this.multiply}>计算</Button><br/>
+            存期：<Input placeholder="存期" className='App-input' name='qixian' value={this.state.qixian}/><br/>
+            <Button type="primary" className='App-button' onClick={this.multiply}>计算</Button><br/>
             本息：<Input placeholder="利息" className='App-input' suffix="元" value={this.state.lixi.toFixed(2)}/>        
           </Col>
         </Row>

@@ -39,14 +39,20 @@ class App extends React.Component {
     let l = 1;
     let lv = 0;
     switch(e){
-      case '6': l='2';lv='8.8'; break;
+      case '6': l='2';lv='0'; break;
       case '1': l='1';lv='8.8'; break;
       case '2': l='1';lv='8'; break;
-      default : l='1'
+      default : l='1';
     }
     this.setState({
       pa: l,
-      lilv: lv
+      lilv: lv,
+      benjin:0,
+      lixi:0,
+      hankuaijine:0,
+      yuexi:0,
+      cishu:1,
+      qixian:0,
     })
   };
 
@@ -62,7 +68,7 @@ class App extends React.Component {
     return (
       <div>
         <div>
-        还款方式：<Select className='App-input'  onChange={(e) =>{this.handleSelectChange(e)}} style={{ width: 200 }} defaultValue="1"
+        贷款种类：<Select className='App-input'  onChange={(e) =>{this.handleSelectChange(e)}} style={{ width: 200 }} defaultValue="1"
           options={[
             { value: '1', label: '阜兴贷' },
             { value: '2', label: '惠农快贷' },
@@ -73,7 +79,7 @@ class App extends React.Component {
         贷款金额：<Input placeholder="贷款金额" className='App-input' name='benjin' value={this.state.benjin} suffix="元" onChange={(e) =>{this.handleChange(e)}}/><br/>
         贷款年利率：<Input placeholder="贷款年利率" className='App-input' name='lilv' value={this.state.lilv} suffix="%" onChange={(e) =>{this.handleChange(e)}}/><br/>
         贷款期限：<Input placeholder="贷款期限" className='App-input' name='qixian' value={this.state.qixian} onChange={(e) =>{this.handleChange(e)}}/><br/>
-        <Button type="primary" onClick={this.multiply}>计算</Button><br/>
+        <Button type="primary" className='App-button' onClick={this.multiply}>计算</Button><br/>
 
         <this.Greeting putong={this.state}></this.Greeting>
         </div>

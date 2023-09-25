@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Input,Button,Select, Table } from 'antd';
+import { Table } from 'antd';
 
 class App extends React.Component {
   constructor(props) {
@@ -113,7 +113,7 @@ class App extends React.Component {
     }  
 
     return (
-      <div>
+      <div  >
         <Table columns={columns} dataSource={data} pagination={{ position: [] }}>
 
         </Table>

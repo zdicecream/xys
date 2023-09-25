@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import Image from 'rc-image';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +10,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <img class='App-img' src='../fp.jpg' alt='img'></img>
+        <img class='App-img'  src='../fp.jpg' alt='img'></img>
         {/* <h1>河北省农村信用社</h1> 阜平县农村信用合作联社<br/>*/}
         <p className='App-p'>
         阜平联社   2023开门红<br/>
